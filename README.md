@@ -13,5 +13,6 @@ Gratitude Feed that refreshes every 24 hours
 - Add likes
 - Add comments
 
-## Wifeframes [https://whimsical.com/24-hours-of-gratitude-R417N3iJP1qnfbj4yQomu4]
+## Wifeframes 
+https://whimsical.com/24-hours-of-gratitude-R417N3iJP1qnfbj4yQomu4
 
