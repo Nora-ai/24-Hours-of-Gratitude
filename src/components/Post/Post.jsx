@@ -1,10 +1,9 @@
 import './Post.css'
 
-function Post() {
-
+function Post(props) {
     return (<>
 
-        
+
 
     </>)
 }

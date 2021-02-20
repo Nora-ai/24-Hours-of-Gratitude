@@ -20,7 +20,9 @@ function App() {
   return (<>
     <h2>24 Hours of Gratitude</h2>
     <Route exact path='/'>
-      <p>Feed goes here</p>
+      {posts.map((post) => (
+        <Feed key={post.id} posts={post}/>
+      ))}
     </Route>
     <Route path='/new'>
       <p>new post goes here</p>
