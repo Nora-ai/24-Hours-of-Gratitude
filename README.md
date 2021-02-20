@@ -1,4 +1,4 @@
-# 24-Hours-of-Gratitude
+# 24-hours-of-gratitude
 Gratitude Feed that refreshes every 24 hours
 
 ## MVP
