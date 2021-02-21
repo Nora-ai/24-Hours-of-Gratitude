@@ -1,11 +1,12 @@
 import './App.css';
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { baseUrl, config } from './services'
 import Feed from './components/Feed/Feed'
 import Post from './components/Post/Post'
 import NavBar from './components/NavBar/NavBar'
+import PostButton from './components/NavBar/PostButton'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -20,9 +21,12 @@ function App() {
   },[toggleFetch])
 
   return (<>
-    <NavBar />
-    <Route exact path='/'>
+  <div className="app">
+  <NavBar />
   
+    <Route exact path='/'>
+    <PostButton />
+    
       {posts.map((post) => (
         <Feed key={post.id} posts={post}/>
       ))}
@@ -30,6 +34,7 @@ function App() {
     <Route path='/new'>
       <Post setToggleFetch={setToggleFetch}/>
     </Route>
+    </div>
 
   </>);
 }

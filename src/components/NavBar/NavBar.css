@@ -2,17 +2,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color:black;
+    background-color: #e2e1d6;
 }
 
 .app-title {
-    color: white;
-    margin-left: 2%;
-    font-family: 'Akaya Telivigala', cursive;
-
-}
-
-.app-post-button {
-    margin-right: 25px;
-    margin-top: 25px;
+    color:#746c6c;
+    margin-left: 5%;
+    width: 300px;
+    font-size: 28px;
 }

@@ -1,0 +1,18 @@
+.app-post-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background:#74746c;
+    color: white;
+    width: 75px;
+    height: 30px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    font-weight:600;
+}
+
+.app-post-button:hover {
+    background-color: #f7ede2;
+    color: #adaca4;
+}

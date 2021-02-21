@@ -1,8 +1,7 @@
 import "./Feed.css";
-import { Link } from "react-router-dom";
+import Likes from '../Likes/Likes'
 
 function Feed(props) {
-  console.log(props.posts.fields.item1);
 
   const {
     item1,
@@ -15,24 +14,30 @@ function Feed(props) {
     item8,
     item9,
     item10,
+    author
   } = props.posts.fields;
 
   return (
     <>
       <div className="card-container">
-        <h2 className="card-title">Today, I am grateful for...</h2>
-        <div className="card-content">
-          <p>{item1}</p>
-          <p>{item2}</p>
-          <p>{item3}</p>
-          <p>{item4}</p>
-          <p>{item5}</p>
-          <p>{item6}</p>
-          <p>{item7}</p>
-          <p>{item8}</p>
-          <p>{item9}</p>
-          <p>{item10}</p>
+        <div className="title-and-time">
+            <h2 className="card-title">Today, I am grateful for...</h2>
+            <p className="timestamp">9:30 AM AST</p>
         </div>
+        <div className="card-content">
+          <p>1. {item1}</p>
+          <p>2. {item2}</p>
+          <p>3. {item3}</p>
+          <p>4. {item4}</p>
+          <p>5. {item5}</p>
+          <p>6. {item6}</p>
+          <p>7. {item7}</p>
+          <p>8. {item8}</p>
+          <p>9. {item9}</p>
+          <p>10. {item10}</p>
+        </div>
+        <Likes />
+        <p className="author">By: {author}</p>
       </div>
     </>
   );
