@@ -1,13 +1,15 @@
 import './App.css';
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { baseUrl, config } from './services'
 import Feed from './components/Feed/Feed'
 import Post from './components/Post/Post'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   const [posts, setPosts] = useState([])
+  const [toggleFetch, setToggleFetch] = useState(false)
   
   useEffect(() => {
     const getPosts = async () => {
@@ -15,17 +17,18 @@ function App() {
       setPosts(resp.data.records)
     }
     getPosts()
-  },[])
+  },[toggleFetch])
 
   return (<>
-    <h2>24 Hours of Gratitude</h2>
+    <NavBar />
     <Route exact path='/'>
+  
       {posts.map((post) => (
         <Feed key={post.id} posts={post}/>
       ))}
     </Route>
     <Route path='/new'>
-      <p>new post goes here</p>
+      <Post setToggleFetch={setToggleFetch}/>
     </Route>
 
   </>);

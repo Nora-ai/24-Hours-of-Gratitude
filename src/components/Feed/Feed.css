@@ -1,0 +1,25 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    width: 500px;
+    margin: 10% auto;
+}
+
+.card-title {
+    text-align: center;
+    font-size: large;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-content p {
+    margin: 2%;
+}
