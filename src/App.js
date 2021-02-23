@@ -7,6 +7,8 @@ import Feed from './components/Feed/Feed'
 import Post from './components/Post/Post'
 import NavBar from './components/NavBar/NavBar'
 import PostButton from './components/NavBar/PostButton'
+import Landing from './components/Landing/Landing'
+
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -22,9 +24,13 @@ function App() {
 
   return (<>
   <div className="app">
-  <NavBar />
-  
+
     <Route exact path='/'>
+      <Landing 
+      />
+    </Route>
+  
+    <Route path='/home'>
     <PostButton />
     
       {posts.map((post) => (

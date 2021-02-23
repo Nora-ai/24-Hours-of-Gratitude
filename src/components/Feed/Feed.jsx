@@ -3,6 +3,7 @@ import Likes from '../Likes/Likes'
 
 function Feed(props) {
 
+
   const {
     item1,
     item2,
@@ -14,15 +15,26 @@ function Feed(props) {
     item8,
     item9,
     item10,
-    author
   } = props.posts.fields;
+
+
+  const tableTime = props.posts.createdTime
+  const convertedTime = tableTime.split('').splice(11,5)
+
+  // function to return AM or PM
+
+  const itemsArray = props.posts.fields
+
+  const newArray = Object.values(itemsArray)
+  console.log(newArray)
+  
 
   return (
     <>
       <div className="card-container">
         <div className="title-and-time">
             <h2 className="card-title">Today, I am grateful for...</h2>
-            <p className="timestamp">9:30 AM AST</p>
+            <p className="timestamp">{convertedTime} PM</p>
         </div>
         <div className="card-content">
           <p>1. {item1}</p>
@@ -37,7 +49,7 @@ function Feed(props) {
           <p>10. {item10}</p>
         </div>
         <Likes />
-        <p className="author">By: {author}</p>
+        <p className="author">By: {props.posts.fields.author}</p>
       </div>
     </>
   );
