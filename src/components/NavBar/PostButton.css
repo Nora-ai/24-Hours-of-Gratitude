@@ -1,4 +1,4 @@
-.app-post-button {
+/* .app-post-button {
     position: absolute;
     top: 30px;
     right: 30px;
@@ -8,7 +8,7 @@
 
 .app-post-button:hover {
   display: none;
-}
+} */
 
    
 
@@ -16,11 +16,12 @@
     position: absolute;
     top: 10px;
     right: 50px;
-    font-size: 42px;
+    font-size: 16px;
     text-decoration: none;
-    color: white;
+    color: black;
+    
 }
 
 .barcode-post:hover {
-    color:white;
+    color:pink;
 }

@@ -1,6 +1,8 @@
 .navbar-container {
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding-bottom: 30px;
 }
 
 .app-title {

@@ -31,6 +31,7 @@ function Feed(props) {
 
   return (
     <>
+    
       <div className="card-container">
         <div className="title-and-time">
             <h2 className="card-title">Today, I am grateful for...</h2>
@@ -51,6 +52,7 @@ function Feed(props) {
         <Likes />
         <p className="author">By: {props.posts.fields.author}</p>
       </div>
+      
     </>
   );
 }

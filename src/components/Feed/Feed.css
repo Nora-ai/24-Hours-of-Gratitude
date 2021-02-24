@@ -5,9 +5,10 @@
     border: none;
     width: 75%;
     margin: 10% auto;
-    border: 2px dashed lightgrey;
     padding: 20px;
+    border: 2px solid red;
     background-color: white;
+    box-shadow:5px 5px 5px red;
 
 }
 
@@ -58,3 +59,4 @@
     text-align: center;
 
 }
+
