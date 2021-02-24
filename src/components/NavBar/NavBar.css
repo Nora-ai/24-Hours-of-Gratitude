@@ -1,13 +1,49 @@
 .navbar-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: transparent;
+    flex-direction: column;
 }
 
 .app-title {
-    color:white;
-    margin-left: 5%;
-    width: 300px;
-    font-size: 28px;
+    font-family: helvetica;
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    -webkit-text-stroke:transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+    margin: 20px 0 0 20px;
+    
+}
+
+.app-title-two {
+    font-family: helvetica;
+    font-size: 24px;
+    color: red;
+    text-transform: uppercase;
+    -webkit-text-stroke:transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+    margin: 0 0 0 40px;
+}
+
+.app-title-three {
+    font-family: helvetica;
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    -webkit-text-stroke:transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+    margin: 0 0 0 60px;
+}
+
+.nice-day {
+    font-family: helvetica;
+    font-size: 14px;
+    color: red;
+    text-transform: uppercase;
+    -webkit-text-stroke:transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
+    margin: 0 0 0 250px;
 }

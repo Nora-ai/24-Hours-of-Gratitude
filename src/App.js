@@ -31,6 +31,7 @@ function App() {
     </Route>
   
     <Route path='/home'>
+      <NavBar />
     <PostButton />
     
       {posts.map((post) => (
