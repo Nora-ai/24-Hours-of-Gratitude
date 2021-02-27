@@ -6,25 +6,25 @@
     width: 75%;
     margin: 10% auto;
     padding: 20px;
-    border: 2px solid red;
-    background-color: white;
-    box-shadow:5px 5px 5px red;
+    background-color: #F2F3F4;
+    /* box-shadow:5px 5px 5px red; */
 
 }
 
-.card-container:hover {
+/* .card-container:hover {
     background-color:white;
-}
+} */
 
 .card-title {
     width: 600px;
+    text-align: center;
     font-family: helvetica;
     font-size: 24px;
-    color: white;
+    color: #36454f;
     text-transform: uppercase;
-    -webkit-text-stroke:transparent;
+    /* -webkit-text-stroke:transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-color: red; */
 
 }
 
@@ -34,6 +34,7 @@
     justify-content: center;
     align-items: flex-start;
     padding: 5% 10%;
+    font-size: 14px;
 }
 
 .card-content p {

@@ -34,7 +34,7 @@ function Feed(props) {
     
       <div className="card-container">
         <div className="title-and-time">
-            <h2 className="card-title">Today, I am grateful for...</h2>
+            <h2 className="card-title">I am grateful for...</h2>
             <p className="timestamp">{convertedTime} PM</p>
         </div>
         <div className="card-content">

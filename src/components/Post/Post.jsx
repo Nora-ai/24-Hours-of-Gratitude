@@ -15,6 +15,7 @@ function Post(props) {
   const [item8, setItem8] = useState("");
   const [item9, setItem9] = useState("");
   const [item10, setItem10] = useState("");
+  const [author, setAuthor] = useState("")
   const history = useHistory()
 
 
@@ -36,77 +37,95 @@ function Post(props) {
       await axios.post(baseUrl, {fields}, config)
       props.setToggleFetch((curr) => !curr)
 
-      history.push('/')
+      history.push('/home')
 
       //if fields are empty, do not submit and message pops up
 
 
   }
 
-  return (
-    <>
+  return (<>
+    <p className="form-title">Write down 10 things you are grateful for today</p>
+    <div className="list-form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={item1}
           onChange={(e) => setItem1(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item2}
           onChange={(e) => setItem2(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item3}
           onChange={(e) => setItem3(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item4}
           onChange={(e) => setItem4(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item5}
           onChange={(e) => setItem5(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item6}
           onChange={(e) => setItem6(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item7}
           onChange={(e) => setItem7(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item8}
           onChange={(e) => setItem8(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item9}
           onChange={(e) => setItem9(e.target.value)}
+          required
         />
 
         <input
           type="text"
           value={item10}
           onChange={(e) => setItem10(e.target.value)}
+          required
+        />
+        <label className="label-author">Author (or Anonymous)</label>
+        <input className="form-author"
+        type="text"
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
         />
        <button type="submit">Post</button>
       </form>
+      </div>
     </>
   );
 }
