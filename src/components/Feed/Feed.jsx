@@ -1,5 +1,6 @@
 import "./Feed.css";
-import Likes from '../Likes/Likes'
+import Likes from '../Likes'
+import { styled } from 'styled-components'
 
 function Feed(props) {
 
@@ -23,15 +24,14 @@ function Feed(props) {
 
   // function to return AM or PM
 
-  const itemsArray = props.posts.fields
+//   const itemsArray = props.posts.fields
 
-  const newArray = Object.values(itemsArray)
-  console.log(newArray)
+//   const newArray = Object.values(itemsArray)
+//   console.log(newArray)
   
 
   return (
     <>
-    
       <div className="card-container">
         <div className="title-and-time">
             <h2 className="card-title">I am grateful for...</h2>

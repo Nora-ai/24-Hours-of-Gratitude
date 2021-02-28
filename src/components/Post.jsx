@@ -1,8 +1,34 @@
 import "./Post.css";
 import { useState } from "react";
 import axios from "axios";
-import { baseUrl, config } from "../../services"
+import { baseUrl, config } from "../services"
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
+
+const FormTitle = styled.h2`
+text-align: center;
+`
+const ListForm = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+const FormInput = styled.input`
+width: 500px;
+height: 20px;
+margin: 10px auto;
+`
+
+const FormButton = styled.button`
+width: 200px;
+margin: 20px auto;
+`
+
+const LabelAuthor = styled.label`
+text-align: center`
+
+const FormAuthor = styled.input`
+width: 200px`
 
 function Post(props) {
   const [item1, setItem1] = useState("");
@@ -45,87 +71,60 @@ function Post(props) {
   }
 
   return (<>
-    <p className="form-title">Write down 10 things you are grateful for today</p>
-    <div className="list-form">
+    <FormTitle>Write down 10 things you are grateful for today</FormTitle>
+    <ListForm>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={item1}
+        <FormInput required type="text" value={item1}
           onChange={(e) => setItem1(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item2}
+        <FormInput required
+          type="text" value={item2}
           onChange={(e) => setItem2(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item3}
+        <FormInput required type="text" value={item3}
           onChange={(e) => setItem3(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item4}
+        <FormInput required type="text" value={item4}
           onChange={(e) => setItem4(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item5}
+        <FormInput required type="text" value={item5}
           onChange={(e) => setItem5(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item6}
+        <FormInput required type="text" value={item6}
           onChange={(e) => setItem6(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item7}
+        <FormInput required type="text" value={item7}
           onChange={(e) => setItem7(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item8}
+        <FormInput required type="text" value={item8}
           onChange={(e) => setItem8(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item9}
+        <FormInput required type="text" value={item9}
           onChange={(e) => setItem9(e.target.value)}
-          required
         />
 
-        <input
-          type="text"
-          value={item10}
+        <FormInput required type="text" value={item10}
           onChange={(e) => setItem10(e.target.value)}
-          required
         />
-        <label className="label-author">Author (or Anonymous)</label>
-        <input className="form-author"
+        <LabelAuthor>Author (or Anonymous)</LabelAuthor>
+        <FormAuthor
         type="text"
         value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        />
-       <button type="submit">Post</button>
+        onChange={(e) => setAuthor(e.target.value)}>
+        </FormAuthor>
+        
+    
+       <FormButton type="submit">Post</FormButton>
       </form>
-      </div>
+      </ListForm>
     </>
   );
 }

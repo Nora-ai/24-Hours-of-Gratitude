@@ -1,4 +1,4 @@
-import './Likes.css'
+
 
 function Likes() {
     return (<>

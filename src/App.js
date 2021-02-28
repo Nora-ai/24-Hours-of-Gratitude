@@ -8,19 +8,27 @@ import Post from './components/Post/Post'
 import NavBar from './components/NavBar/NavBar'
 import PostButton from './components/NavBar/PostButton'
 import Landing from './components/Landing/Landing'
-import { ThemeProvider, createGlobalStyle} from 'styled-components'
+import { ThemeProvider} from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-body {
-  background-color: ${props => props.theme.mode === 'dark' ? '#111' : '#EEE'}
-  color: ${props => props.theme.mode === 'dark' ? '#EEE' : '#111'}
+const LightTheme = {
+  backgroundColor: "white",
+  color: "black"
 }
-`
+
+const DarkTheme = {
+  backgroundColor: "black",
+  color: "white"
+}
+
+const themes = {
+  light: LightTheme,
+  dark: DarkTheme
+}
 
 function App() {
   const [posts, setPosts] = useState([])
   const [toggleFetch, setToggleFetch] = useState(false)
-  const [theme, setTheme] = useState({ mode: 'light'})
+  const [theme, setTheme] = useState('light')
   
   useEffect(() => {
     const getPosts = async () => {
@@ -30,33 +38,23 @@ function App() {
     getPosts()
   },[toggleFetch])
 
+
+  
   return (<>
-  <div className="app">
 
     <Route exact path='/'>
       <Landing />
     </Route>
   
-    <ThemeProvider theme={{theme}}>
+    <ThemeProvider theme={themes[theme]}>
       <>
-      <GlobalStyle />
+        
         <Route path='/home'>
-          <NavBar />
-          <PostButton />
-
-          <button onClick={e => 
-            setTheme(
-                theme.mode === 'dark' 
-                ? { mode: 'light'}
-                : { mode: 'dark'}
-              )
-              }
-            >
-            Switch Mode
-          </button>
+          <NavBar theme={theme} setTheme={setTheme}/>
+          <PostButton theme={theme} setTheme={setTheme}/>
       
           {posts.map((post) => (
-            <Feed key={post.id} posts={post}/>
+            <Feed key={post.id} posts={post} theme={theme} setTheme={setTheme}/>
           ))}
           </Route>
           
@@ -66,9 +64,20 @@ function App() {
     <Route path='/new'>
       <Post setToggleFetch={setToggleFetch}/>
     </Route>
-    </div>
 
   </>);
 }
 
 export default App;
+
+
+// {/* <button onClick={e => 
+//   setTheme(
+//       theme.mode === 'dark' 
+//       ? { mode: 'light'}
+//       : { mode: 'dark'}
+//     )
+//     }
+//   >
+//   Switch Mode
+// </button> */}
