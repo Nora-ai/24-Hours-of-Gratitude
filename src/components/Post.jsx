@@ -1,4 +1,3 @@
-import "./Post.css";
 import { useState } from "react";
 import axios from "axios";
 import { baseUrl, config } from "../services"

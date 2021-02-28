@@ -1,6 +1,5 @@
-import'./PostButton.css'
 import { Link } from 'react-router-dom'
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 
 const ButtonToPost = styled.div`
 position: absolute;
