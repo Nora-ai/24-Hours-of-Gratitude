@@ -4,30 +4,68 @@ import { baseUrl, config } from "../services"
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
+const PageContainer = styled.div`
+height: 100vh;
+width: 100vw;
+padding-top: 120px;
+`
+
 const FormTitle = styled.h2`
 text-align: center;
+color: #3Eb489;
+width: 400px;
+margin: 0 auto;
+font-size: 20px;
+padding-bottom: 10px;
+text-transform: uppercase;
+font-family: helvetica;
 `
-const ListForm = styled.div`
+const ListFormContainer = styled.div`
 display: flex;
 flex-direction: column;
 `
 
+const ListForm = styled.form`
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+`
+
 const FormInput = styled.input`
 width: 500px;
-height: 20px;
+height: 30px;
 margin: 10px auto;
+border-radius: 5px;
+border: none;
+background: lightgrey;
+`
+
+const AuthorButtonDiv = styled.div`
+display: flex;
+margin: 0 auto;
+justify-content: space-around;
+align-items: center;
 `
 
 const FormButton = styled.button`
 width: 200px;
 margin: 20px auto;
+background-color: #3Eb489;
+color: white;
+height: 34px;
+border: none;
+margin-left: 30px;
+border-radius: 3px;
 `
 
-const LabelAuthor = styled.label`
-text-align: center`
-
 const FormAuthor = styled.input`
-width: 200px`
+width: 200px;
+border-radius: 3px;
+border: none;
+background: lightgrey;
+height: 30px;
+
+`
 
 function Post(props) {
   const [item1, setItem1] = useState("");
@@ -70,9 +108,10 @@ function Post(props) {
   }
 
   return (<>
+  <PageContainer>
     <FormTitle>Write down 10 things you are grateful for today</FormTitle>
-    <ListForm>
-      <form onSubmit={handleSubmit}>
+    <ListFormContainer>
+      <ListForm onSubmit={handleSubmit}>
         <FormInput required type="text" value={item1}
           onChange={(e) => setItem1(e.target.value)}
         />
@@ -113,17 +152,19 @@ function Post(props) {
         <FormInput required type="text" value={item10}
           onChange={(e) => setItem10(e.target.value)}
         />
-        <LabelAuthor>Author (or Anonymous)</LabelAuthor>
-        <FormAuthor
-        type="text"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}>
-        </FormAuthor>
-        
-    
-       <FormButton type="submit">Post</FormButton>
-      </form>
+
+        <AuthorButtonDiv>
+            <FormAuthor
+            type="text"
+            placeholder="  Author (or Anonymous)"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}>
+            </FormAuthor>
+            <FormButton type="submit">Post</FormButton>
+       </AuthorButtonDiv>
       </ListForm>
+      </ListFormContainer>
+      </PageContainer>
     </>
   );
 }

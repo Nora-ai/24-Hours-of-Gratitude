@@ -36,11 +36,13 @@ color: ${props => props.theme.color};
 const CardContent = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: center
 align-items: flex-start;
 padding: 5% 10%;
 font-size: 14px;
 color: ${props => props.theme.color};
+text-transform: uppercase;
+font-family: helvetica;
 `
 
 const Author = styled.p`

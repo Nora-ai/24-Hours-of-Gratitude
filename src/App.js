@@ -7,9 +7,10 @@ import Feed from './components/Feed'
 import Post from './components/Post'
 import NavBar from './components/NavBar'
 import PostButton from './components/PostButton'
-import Landing from './Landing'
+import Landing from './components/Landing'
 import { ThemeProvider} from 'styled-components'
 import styled from 'styled-components'
+import Footer from './components/Footer'
 
 const LightTheme = {
   backgroundColor: "white",
@@ -80,20 +81,23 @@ function App(props) {
 
     
       <Toggle onClick={changeTheme}>{icon}</Toggle>
-        <Route path='/home'>
+      <Route path='/home'>
           <NavBar theme={theme} setTheme={setTheme}/>
           <PostButton theme={theme} setTheme={setTheme}/>
       
           {posts.map((post) => (
             <Feed key={post.id} posts={post} theme={theme} setTheme={setTheme}/>
           ))}
-          </Route>
 
-    <Route path='/new'>
-      <Post setToggleFetch={setToggleFetch}/>
-    </Route>
+          <Footer />
+      </Route>
+
+          <Route path='/new'>
+            <Post theme={theme} setTheme={setTheme} setToggleFetch={setToggleFetch}/>
+          </Route>
     </MainBackground>
     </ThemeProvider>
+    
   </>);
 }
 
