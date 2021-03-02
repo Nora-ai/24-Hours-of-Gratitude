@@ -7,18 +7,20 @@ import Feed from './components/Feed'
 import Post from './components/Post'
 import NavBar from './components/NavBar'
 import PostButton from './components/PostButton'
-import Landing from './components/Landing/Landing'
+import Landing from './Landing'
 import { ThemeProvider} from 'styled-components'
 import styled from 'styled-components'
 
 const LightTheme = {
   backgroundColor: "white",
-  color: "black"
+  color: "black",
+  border: "1px solid #212121"
 }
 
 const DarkTheme = {
-  backgroundColor: "black",
-  color: "white"
+  backgroundColor: "#212121",
+  color: "white",
+  border: "1px solid white"
 }
 
 const themes = {

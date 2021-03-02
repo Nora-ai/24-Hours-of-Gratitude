@@ -41,6 +41,7 @@ margin: 0 0 0 80px;
 `
 
 function NavBar(props) {
+
     
     return (<>
         <NavContainer>

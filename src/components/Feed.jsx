@@ -5,11 +5,11 @@ const CardContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-border: none;
+border: ${props => props.theme.border};
 width: 75%;
 margin: 10% auto;
 padding: 20px;
-background-color: ${props => props.theme.backgroundColor}
+background-color: ${props => props.theme.backgroundColor};
 `
 
 const TitleAndTime = styled.div`
@@ -26,9 +26,11 @@ color: ${props => props.theme.color};
 text-transform: uppercase;
 `
 const TimeStamp = styled.p`
-margin-top: 10px;
-margin-right: -15px;
+margin-top: 15px;
+margin-right: 15px;
 padding: 5px;
+width: 100px;
+color: ${props => props.theme.color};
 `
 
 const CardContent = styled.div`
@@ -44,6 +46,7 @@ color: ${props => props.theme.color};
 const Author = styled.p`
 padding-top: 20px;
 text-align: center;
+color: ${props => props.theme.color};
 `
 
 function Feed(props) {
@@ -99,3 +102,5 @@ function Feed(props) {
 }
 
 export default Feed;
+
+
