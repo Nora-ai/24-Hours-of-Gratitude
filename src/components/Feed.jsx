@@ -1,4 +1,3 @@
-import "./Feed.css";
 import Likes from './Likes'
 import styled from 'styled-components'
 

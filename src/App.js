@@ -10,8 +10,6 @@ import PostButton from './components/PostButton'
 import Landing from './components/Landing/Landing'
 import { ThemeProvider} from 'styled-components'
 import styled from 'styled-components'
-import { CgSun } from 'react-icons/cg'
-import { HiMoon } from 'react-icons/hi'
 
 const LightTheme = {
   backgroundColor: "white",
@@ -35,12 +33,13 @@ background-color: ${props => props.theme.backgroundColor};
 const Toggle = styled.button`
 cursor: pointer;
 height: 50px;
-width: 50px;
-border-radius: 50%;
-border: none;
+width: 100px;
+border: 1px dotted;
 background-color: ${props => props.theme.backgroundColor};
 color: ${props => props.theme.color};
-transition: all .5s ease;
+position: absolute;
+top: 5%;
+right: 10%;
 `
 
 function App(props) {
@@ -65,18 +64,18 @@ function App(props) {
     }
   }
 
-  const icon = theme === "light" ? <HiMoon size={40} /> : <CgSun size={40} />
+  const icon = theme === "light" ? <p>Dark Mode</p> : <p>Light Mode</p>
 
   
   return (<>
+  <Route exact path='/'>
+      <Landing />
+    </Route>
+  
   <ThemeProvider theme={themes[theme]}>
 
   <MainBackground>
 
-    <Route exact path='/'>
-      <Landing />
-    </Route>
-  
     
       <Toggle onClick={changeTheme}>{icon}</Toggle>
         <Route path='/home'>
@@ -97,15 +96,3 @@ function App(props) {
 }
 
 export default App;
-
-
-// {/* <button onClick={e => 
-//   setTheme(
-//       theme.mode === 'dark' 
-//       ? { mode: 'light'}
-//       : { mode: 'dark'}
-//     )
-//     }
-//   >
-//   Switch Mode
-// </button> */}

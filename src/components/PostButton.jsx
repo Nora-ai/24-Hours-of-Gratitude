@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const ButtonToPost = styled.div`
 position: absolute;
-top: 10%;
+top: 12%;
 right: 10%;
 width: 100px;
 height: 50px;
@@ -11,8 +11,9 @@ background-color: #3Eb489;`
 
 const Post = styled.p`
 text-align: center;
+text-transform: uppercase;
 text-decoration: none;
-color: #36454f;
+color: white;
 font-weight: bolder;
 `
 

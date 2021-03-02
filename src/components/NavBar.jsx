@@ -10,7 +10,7 @@ background-color: ${props => props.theme.backgroundColor}
 const TitleOne = styled.h2`
 font-family: helvetica;
 font-size: 28px;
-color: ${props => props.theme.color}
+color: white;
 text-transform: uppercase;
 -webkit-text-stroke:transparent;
 -webkit-text-stroke-width: 1px;
@@ -41,17 +41,6 @@ margin: 0 0 0 80px;
 `
 
 function NavBar(props) {
-
-    // const changeTheme = () => {
-    //     if (props.theme === 'light') {
-    //       props.setTheme("dark") 
-    //     } else {
-    //       props.setTheme("light")
-    //     }
-    //   }
-
-    //   const icon = props.theme === "light" ? <HiMoon size={40} /> : <CgSun size={40} />
-    
     
     return (<>
         <NavContainer>
